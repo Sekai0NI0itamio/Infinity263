@@ -1,0 +1,18 @@
+NOTICE
+
+Infinity With Mending (Itamio port for Minecraft 26.3)
+
+This mod is an unofficial port of "Infinity With Mending" by GoForceX
+(https://github.com/GoForceX/InfinityWithMending, MIT, 1.2M downloads
+on Modrinth, max Minecraft 1.21).
+
+All credit for the original concept, design, and logic goes to
+GoForceX. This port was created by Itamio to bring the mod to
+Minecraft 26.3 (Fabric) because the original has not been updated
+to this version.
+
+Itamio does not take credit for any of the original assets or logic.
+The code was updated to be compatible with Minecraft 26.3 (Fabric):
+the original overwrote EnchantmentArrowInfinite.canApplyTogether;
+in 26.3 enchantments are records and compatibility is decided by
+Enchantment.areCompatible, so the port hooks that instead.
