@@ -21,18 +21,17 @@ jobs:
       - name: Set up Gradle caching
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "9.8.2"
+          gradle-version: "8.14.3"
 
-      - name: Validate Gradle wrapper and project configuration
+      - name: Validate project configuration
         run: |
-          chmod +x gradlew
-          ./gradlew --version --no-daemon
+          gradle --version --no-daemon
           test -f settings.gradle || (echo "settings.gradle missing" && exit 1)
           test -f build.gradle || (echo "build.gradle missing" && exit 1)
-          test -f src/main/resources/fabric.mod.json || (echo "fabric.mod.json missing" && exit 1)
+          test -f src/main/resources/META-INF/mods.toml || (echo "mods.toml missing" && exit 1)
 
-      - name: Build with the Gradle wrapper
-        run: ./gradlew build --no-daemon --warning-mode all
+      - name: Build with Gradle
+        run: gradle build --no-daemon --warning-mode all
 
       - name: Confirm the mod JAR exists and is non-empty
         if: always()
@@ -40,7 +39,7 @@ jobs:
           echo "=== build/libs ==="
           ls -la build/libs/ || (echo "build/libs missing: compilation did not produce output" && exit 1)
           JAR_FOUND=0
-          for jar in build/libs/infinity263-*.jar; do
+          for jar in build/libs/infinity-1.20.1-forge-*.jar; do
             [ -e "$jar" ] || continue
             case "$jar" in
               *-sources.jar) echo "source jar: $jar ($(stat -c%s "$jar") bytes)" ;;
@@ -48,13 +47,13 @@ jobs:
                  test -s "$jar" || (echo "FAIL: mod JAR is empty: $jar" && exit 1) ;;
             esac
           done
-          [ "$JAR_FOUND" = "1" ] || (echo "FAIL: expected mod JAR build/libs/infinity263-*.jar not found" && exit 1)
+          [ "$JAR_FOUND" = "1" ] || (echo "FAIL: expected mod JAR build/libs/infinity-1.20.1-forge-*.jar not found" && exit 1)
           echo "JAR validation passed."
 
       - name: Upload mod JAR
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: infinity263-jar
+          name: infinity-1.20.1-forge-jar
           path: build/libs/*.jar
           if-no-files-found: error

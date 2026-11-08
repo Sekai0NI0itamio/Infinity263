@@ -3,6 +3,7 @@
   "minVersion": "0.8",
   "package": "itamio.infinity.mixin",
   "compatibilityLevel": "JAVA_17",
+  "refmap": "infinity.refmap.json",
   "mixins": [
     "ArrowInfiniteEnchantmentMixin"
   ],

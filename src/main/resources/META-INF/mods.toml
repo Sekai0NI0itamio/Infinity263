@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="infinity"
+version="1.0.0"
+displayName="Infinity With Mending"
+credits="GoForceX"
+authors="Itamio, GoForceX"
+description='''Allows Infinity and Mending enchantments together. Unofficial port of Infinity With Mending by GoForceX (MIT) for Minecraft 1.20.1 (Forge). See NOTICE for credit.'''
+
+[[dependencies.infinity]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.infinity]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"
