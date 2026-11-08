@@ -54,7 +54,7 @@ configurations {
 }
 
 dependencies {
-    implementation "net.neoforged:neoforge:${{neo_version}}"
+    implementation "net.neoforged:neoforge:${neo_version}"
 }
 
 tasks.withType(ProcessResources).configureEach {
@@ -83,7 +83,7 @@ publishing {
     }
     repositories {
         maven {
-            url "file://${{project.projectDir}}/repo"
+            url "file://${project.projectDir}/repo"
         }
     }
 }
