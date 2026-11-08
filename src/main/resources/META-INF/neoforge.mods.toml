@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+
+[[mods]]
+modId="infinity"
+version="1.0.0"
+displayName="Infinity With Mending"
+credits="GoForceX"
+authors="Itamio, GoForceX"
+description='''Allows Infinity and Mending enchantments together. Unofficial NeoForge port of Infinity With Mending by GoForceX (MIT) for Minecraft 26.3 (NeoForge). See NOTICE for credit.'''
+
+[[mixins]]
+config="infinity.mixins.json"
+
+[[dependencies.infinity]]
+    modId="neoforge"
+    mandatory=true
+    versionRange="[26.3,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.infinity]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[26.3]"
+    ordering="NONE"
+    side="BOTH"
