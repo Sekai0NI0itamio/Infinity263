@@ -1,7 +1,7 @@
-# Infinity With Mending — Modern Port for Minecraft 1.21.11 (Fabric)
+# Infinity With Mending — Modern Port for Minecraft 1.21.11 (NeoForge)
 
-![Mod loader: Fabric](https://img.shields.io/badge/modloader-Fabric-1976d2?style=for-the-badge)
-![Minecraft: 1.21.11](https://img.shields.io/badge/Minecraft-26.3-green?style=for-the-badge)
+![Mod loader: NeoForge](https://img.shields.io/badge/modloader-NeoForge-1976d2?style=for-the-badge)
+![Minecraft: 1.21.11](https://img.shields.io/badge/Minecraft-1.21.11-green?style=for-the-badge)
 ![GitHub license](https://img.shields.io/github/license/Sekai0NI0itamio/Infinity263?style=for-the-badge)
 
 **Lets Infinity and Mending coexist on the same bow.**
@@ -9,7 +9,7 @@
 Vanilla forbids putting Infinity and Mending together. This mod removes
 that boundary — have Infinity and Mending together!
 
-Now with a **modern port for Minecraft 1.21.11 (Fabric)**. In 1.21.11,
+Now with a **modern port for Minecraft 1.21.11 (NeoForge)**. In 1.21.11,
 enchantments are data-driven records and compatibility is decided by
 `Enchantment.areCompatible`, so the port hooks that check for the
 Infinity/Mending pair instead of the old `canApplyTogether` overwrite.
@@ -19,17 +19,16 @@ Infinity/Mending pair instead of the old `canApplyTogether` overwrite.
 - Infinity + Mending can be applied to the same item
 - No other enchantment rules changed
 
-### Modern port notes (26.3)
+### Modern port notes (1.21.11)
 
-- Java 21 · Fabric Loader 0.19.3+ · Fabric API 0.141.4+1.21.11
+- Java 21 · NeoForge 21.11.48 · NeoGradle 7.1.39
 - Built and verified in CI via GitHub Actions, including a headless
   runtime test that launches the client, joins a world, and quits cleanly
 
 ### Installation
 
-1. Install Fabric Loader for Minecraft 1.21.11
-2. Install Fabric API
-3. Drop `infinity263-*.jar` into your `mods` folder
+1. Install NeoForge 21.11.48 for Minecraft 1.21.11
+2. Drop `infinity-1.21.11-neoforge-*.jar` into your `mods` folder
 
 ### Original mod & credit
 
@@ -42,4 +41,4 @@ last updated for 1.21) has not been updated to 1.21.11.
 - License: MIT — see `LICENSE`
 
 All credit for the original concept, design, and logic goes to
-GoForceX. This port exists to bring it to Minecraft 26.3. See `NOTICE`.
+GoForceX. This port exists to bring it to Minecraft 1.21.11 (NeoForge). See `NOTICE`.

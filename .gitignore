@@ -1,0 +1,21 @@
+# Build artifacts — never commit these (they're per-machine)
+build/
+.gradle/
+run/
+run-data/
+out/
+*.log
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.eclipse/
+.classpath
+.project
+.settings/
+
+# OS files
+.DS_Store

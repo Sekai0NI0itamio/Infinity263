@@ -1,9 +1,10 @@
 name: runtime-test
 
-# GitHub-only runtime test: launches the real Minecraft 1.21.11 Fabric client
-# headlessly (HeadlessMC + Xvfb via mc-runtime-test), which joins a
-# single-player world, waits for chunks to load, then quits cleanly.
-# Surviving this proves the mod loads at the title screen AND in-game.
+# GitHub-only runtime test: launches the real Minecraft 1.21.11 NeoForge client
+# headlessly (HeadlessMC + Xvfb via mc-runtime-test), which reaches the
+# title screen, joins a single-player world, then quits cleanly.
+# Surviving this proves the mod (and its mixins) loads at the title screen
+# AND in-game with no mixin errors.
 on:
   push:
   pull_request:
@@ -28,7 +29,7 @@ jobs:
       - name: Set up Gradle caching
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "9.8.2"
+          gradle-version: "8.14.3"
 
       - name: Build mod
         run: |
@@ -38,19 +39,18 @@ jobs:
       - name: Stage mod for test client
         run: |
           mkdir -p run/mods
-          cp build/libs/infinity263-*.jar run/mods/
+          cp build/libs/infinity-1.21.11-neoforge-*.jar run/mods/
           ls -la run/mods/
 
       - name: Run Minecraft 1.21.11 client (title screen + in-game world load)
         uses: headlesshq/mc-runtime-test@5.0.0
         with:
           mc: 1.21.11
-          modloader: fabric
-          regex: .*fabric.*
-          mc-runtime-test: fabric
+          modloader: neoforge
+          mc-runtime-test: neoforge
           java: 21
           xvfb: "true"
-          fabric-api: 0.141.4
+          fabric-api: none
           headlessmc-command: '--jvm "-DMcRuntimeGameTest=false"'
 
       - name: Upload runtime logs
