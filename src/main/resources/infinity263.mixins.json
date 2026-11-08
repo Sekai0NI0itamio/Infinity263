@@ -3,6 +3,10 @@
   "minVersion": "0.8",
   "package": "itamio.infinity.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["EnchantmentMixin"],
-  "injectors": {"defaultRequire": 1}
+  "mixins": [
+    "EnchantmentMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }

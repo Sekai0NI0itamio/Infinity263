@@ -3,8 +3,11 @@
   "id": "infinity263",
   "version": "${version}",
   "name": "Infinity With Mending",
-  "description": "Allows Infinity and Mending enchantments together. Unofficial port of Infinity With Mending by GoForceX (MIT) for Minecraft 26.3 (Fabric). See NOTICE for credit.",
-  "authors": ["Itamio", "GoForceX"],
+  "description": "Allows Infinity and Mending enchantments together. Unofficial port of Infinity With Mending by GoForceX (MIT) for Minecraft 1.21.1 (Fabric). See NOTICE for credit.",
+  "authors": [
+    "Itamio",
+    "GoForceX"
+  ],
   "contact": {
     "homepage": "https://github.com/Sekai0NI0itamio/Infinity263",
     "sources": "https://github.com/GoForceX/InfinityWithMending",
@@ -12,7 +15,18 @@
   },
   "license": "MIT",
   "environment": "*",
-  "entrypoints": {"main": ["itamio.infinity.InfinityMod"]},
-  "mixins": ["infinity263.mixins.json"],
-  "depends": {"fabricloader": ">=0.20.1", "minecraft": "~26.3", "java": ">=25", "fabric-api": "*"}
+  "entrypoints": {
+    "main": [
+      "itamio.infinity.InfinityMod"
+    ]
+  },
+  "mixins": [
+    "infinity263.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": ">=1.21.1 <1.22",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
 }
